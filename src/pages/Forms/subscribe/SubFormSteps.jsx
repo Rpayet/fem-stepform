@@ -21,7 +21,19 @@ export function Step1() {
     )
 }
 
-export function Step2() {
+export function Step2({planArray, formData, setFormData}) {
+
+    const handleBillChange = (e) => {
+        const checked = e.target.checked;
+
+        if (checked) {
+            setFormData({...formData, billing: 'yearly'});
+        } else {
+            setFormData({...formData, billing: 'monthly'});
+        }
+
+    }
+
     return (
         <>
             <div>
@@ -29,32 +41,27 @@ export function Step2() {
                 <p>You have the option of monthly or yearly billing.</p>
             </div>
             <div>
-                <div>
-                    <img src="" alt="" />
-                    <p>Arcade</p>
-                    <p>$9/mo</p>
-                </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>Advanced</p>
-                    <p>$12/mo</p>
-                </div>
-                <div>
-                    <img src="" alt="" />
-                    <p>Arcade</p>
-                    <p>$15/mo</p>
-                </div>
+                {planArray.map((p) => (
+                    <div key={p.name}>
+                        <img src={`${p.img}`} alt={p.name} />
+                        <p>{p.name}</p>
+                        {formData.billing === 'monthly' 
+                            ? <p>${p.monthly}/mo</p> 
+                            : <p>${p.yearly}/yr</p>
+                        }
+                    </div>
+                ))}
             </div>
             <div>
                 <p>Monthly</p>
-                <input type="checkbox" />
+                <input type="checkbox" onChange={(e) => {handleBillChange(e)}}/>
                 <p>Yearly</p>
             </div>
         </>
     )
 }
 
-export function Step3() {
+export function Step3({addOnsArray}) {
     return (
         <>
             <div>

@@ -9,11 +9,11 @@ export const SubFormProvider = ({children}) => {
         email: '',
         phone: '',
         plan: '',
-        billing: '',
+        billing: 'monthly',
         addOns: [],
     });
 
-    const plan = [
+    const planArray = [
         {
             name: 'Arcade',
             monthly: 9,
@@ -34,7 +34,7 @@ export const SubFormProvider = ({children}) => {
         }
     ];
 
-    const addOns = [
+    const addOnsArray = [
         {
             name: 'Online service',
             monthly: 1,
@@ -53,7 +53,7 @@ export const SubFormProvider = ({children}) => {
     ];
     
     return (
-        <SubFormContext.Provider value={{formData, setFormData, plan, addOns}}>
+        <SubFormContext.Provider value={{formData, setFormData, planArray, addOnsArray}}>
             {children}
         </SubFormContext.Provider>
     )
