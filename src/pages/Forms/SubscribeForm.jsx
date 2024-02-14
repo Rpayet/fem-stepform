@@ -2,9 +2,16 @@ import { Outlet } from "react-router-dom";
 
 export default function SubscribeForm() {
     return (
-        <div>
-            <h2>Steps</h2>
+        <form>
+            <div className='steps-ariane'>
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+            </div>
             <Outlet />
-        </div>
+            <button>Go Back</button>
+            <button>Next Step</button>
+        </form>
     )
 }
