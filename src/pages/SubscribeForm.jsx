@@ -1,5 +1,4 @@
-import { Outlet } from "react-router-dom";
-import Button from "../components/Button";
+import { Link, Outlet } from "react-router-dom";
 
 export default function SubscribeForm() {
     return (
@@ -14,8 +13,8 @@ export default function SubscribeForm() {
             <Outlet />
 
             <div className='btn-form-nav'>
-                <Button>Go Back</Button>
-                <Button>Next Step</Button>
+                <Link to="/" >Go Back</Link>
+                <Link to="/step3">Next Step</Link>
             </div>
         </form>
     )

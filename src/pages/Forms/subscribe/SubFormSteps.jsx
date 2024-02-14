@@ -1,4 +1,4 @@
-import Button from "../../../components/Button"
+import { Link } from "react-router-dom"
 
 export function Step1() {
     return (
@@ -102,7 +102,7 @@ export function Step4() {
                 <div>
                     <div>
                         <p>Service</p>
-                        <Button>Change</Button>
+                        <Link>Change</Link>
                     </div>
                     <p>$9/mo</p>
                 </div>
@@ -126,7 +126,7 @@ export function Step4() {
 export function Confirm() {
     return (
         <>
-            <img src="" alt="" />
+            <img src="../src/assets/images/icon-thank-you.svg" alt="thks" />
             <h3>Thank you!</h3>
             <p>Thanks for confirming your subscription! We hope you have fun using our platform. 
                 If you ever need support, please feel free to email us at <a href="">support@loremgaming.com</a>.</p>
