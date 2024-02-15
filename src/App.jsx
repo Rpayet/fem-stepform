@@ -15,7 +15,7 @@ export default function App() {
                 <Route path='/' element={<SubscribeForm />}>
                     <Route path='step1' element={<Step1 />} />
                     <Route path='step2' element={<Step2 planArray={planArray} formData={formData} setFormData={setFormData} />} />
-                    <Route path='step3' element={<Step3 addOnsArray={addOnsArray}/>} />
+                    <Route path='step3' element={<Step3 addOnsArray={addOnsArray} formData={formData} setFormData={setFormData} />} />
                     <Route path='step4' element={<Step4 />} />
                     <Route path='confirm' element={<Confirm />} />
                 </Route>    

@@ -34,6 +34,10 @@ export function Step2({planArray, formData, setFormData}) {
 
     }
 
+    const handlePlanChange = (p) => {
+        setFormData({...formData, plan: p});
+    }
+
     return (
         <>
             <div>
@@ -42,11 +46,11 @@ export function Step2({planArray, formData, setFormData}) {
             </div>
             <div>
                 {planArray.map((p) => (
-                    <div key={p.name}>
+                    <div key={p.id} onClick={() => {handlePlanChange(p)}} className="plan-card">
                         <img src={`${p.img}`} alt={p.name} />
                         <p>{p.name}</p>
-                        {formData.billing === 'monthly' 
-                            ? <p>${p.monthly}/mo</p> 
+                        {formData.billing === 'monthly'
+                            ? <p>${p.monthly}/mo</p>
                             : <p>${p.yearly}/yr</p>
                         }
                     </div>
@@ -61,42 +65,59 @@ export function Step2({planArray, formData, setFormData}) {
     )
 }
 
-export function Step3({addOnsArray}) {
+export function Step3({addOnsArray, formData, setFormData}) {
+
+    const handleAddOnChange = (selectedAddOn) => {
+        // Check if the add-on is already selected
+        const isAddOnSelected = formData.addOns.find(addOn => addOn.id === selectedAddOn.id);
+        
+        if (isAddOnSelected) {
+            // If the add-on is selected, remove it from the list
+            setFormData({
+                ...formData,
+                addOns: formData.addOns.filter(addOn => addOn.id !== selectedAddOn.id),
+            });
+        } else {
+            // If the add-on is not selected, add it to the list
+            setFormData({
+                ...formData,
+                addOns: [...formData.addOns, selectedAddOn],
+            });
+        }
+    }
+
     return (
         <>
             <div>
-                <h3>pick add-ons</h3>
-                <p>Add-ons help enhance your gaming eperience.</p>
+                <h3>Pick add-ons</h3>
+                <p>Add-ons help enhance your gaming experience.</p>
             </div>
             <div>
-                <div>
-                    <input type="checkbox" />
-                    <div>
-                        <p>Online service</p>
-                        <p>Access to multiplayer games</p>
+                {addOnsArray.map((a) => (
+                    <div key={a.id} onClick={() => {handleAddOnChange(a)}}>
+                        <input 
+                            type="checkbox" 
+                            checked={formData.addOns.some(addOn => addOn.id === a.id)}
+                            onChange={() => {}} // OnChange is required for the input to be controlled
+                            readOnly // Prevents the user from changing the input
+                        />
+                        <div>
+                            <div>
+                                <p>{a.name}</p>
+                                <p>{a.details}</p>
+                            </div>
+                            {formData.billing === 'monthly'
+                                ? <p>+${a.monthly}/mo</p> 
+                                : <p>+${a.yearly}/yr</p>
+                            }
+                        </div>
                     </div>
-                    <p>+$1/mo</p>
-                </div>
-                <div>
-                    <input type="checkbox" />
-                    <div>
-                        <p>Larger storage</p>
-                        <p>Extra 1TB of cloud save</p>
-                    </div>
-                    <p>+$2/mo</p>
-                </div>
-                <div>
-                    <input type="checkbox" />
-                    <div>
-                        <p>Customizable profile</p>
-                        <p>Custom theme on your profile</p>
-                    </div>
-                    <p>+$2/mo</p>
-                </div>
+                ))}
             </div>
         </>
     )
 }
+
 
 export function Step4() {
     return (
