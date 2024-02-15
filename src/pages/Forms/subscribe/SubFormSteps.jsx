@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom"
 
-export function Step1() {
+export function Step1({formData, setFormData}) {
+
+    // Todo - Add validation
+    // Todo - Add error message
+    // Todo - Format Input to arrayMap
+    // Todo - Add function to handleInputChange
+
     return (
         <>
             <div>
@@ -9,13 +15,28 @@ export function Step1() {
             </div>
             <div>
                 <label htmlFor='name'>Name</label>
-                <input type='text' id='name' placeholder="e.g. Stephen king" />
+                <input 
+                    type='text' 
+                    id='name' 
+                    placeholder="e.g. Stephen king"
+                    value={formData.name}
+                    onChange={(e) => {setFormData({...formData, name: e.target.value})}}/>
 
                 <label htmlFor='email'>Email Address</label>
-                <input type='email' id='email' placeholder="e.g. stephenking@lorem.com" />
+                <input 
+                    type='email' 
+                    id='email' 
+                    placeholder="e.g. stephenking@lorem.com"
+                    value={formData.email}
+                    onChange={(e) => {setFormData({...formData, email: e.target.value})}} />
 
                 <label htmlFor='phone'>Phone Number</label>
-                <input type='tel' id='phone' placeholder="e.g. +1 234 567 890" />
+                <input 
+                    type='tel' 
+                    id='phone' 
+                    placeholder="e.g. +1 234 567 890"
+                    value={formData.phone}
+                    onChange={(e) => {setFormData({...formData, phone: e.target.value})}} />
             </div>
         </>
     )
@@ -119,7 +140,10 @@ export function Step3({addOnsArray, formData, setFormData}) {
 }
 
 
-export function Step4() {
+export function Step4({formData}) {
+
+    const billing = formData.billing === 'monthly' ? 'mo' : 'yr';
+
     return (
         <>
             <div>
@@ -129,22 +153,26 @@ export function Step4() {
             <div>
                 <div>
                     <div>
-                        <p>Service</p>
+                        <p>{formData.plan.name}({formData.billing})</p>
                         <Link>Change</Link>
                     </div>
                     <p>$9/mo</p>
                 </div>
+                {formData.addOns.map((a) => (
+                    <div key={a.id}>
+                        <div>
+                            <p>{a.name}</p>
+                            <Link>Change</Link>
+                        </div>
+                        <p>+${a.monthly}/mo</p>
+                    </div>
+                ))}
                 <div>
-                    <p>Online service</p>
-                    <p>+$1/mo</p>
-                </div>
-                <div>
-                    <p>Larger storage</p>
-                    <p>+$2/mo</p>
-                </div>
-                <div>
-                    <p>Total (per month)</p>
-                    <p>$12/mo</p>
+                    {formData.billing === 'monthly' 
+                        ? <p>Total (per month)</p>
+                        : <p>Total (per year)</p>
+                    }
+                    <p>+${}/{formData.billing === 'monthly' ? 'mo' : 'yr'}</p>
                 </div>
             </div>
         </>
