@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const SubFormContext = createContext();
 
@@ -61,9 +61,11 @@ export const SubFormProvider = ({children}) => {
             yearly: 20,
         }
     ];
+
+    const [currentStep, setCurrentStep] = useState(1);
     
     return (
-        <SubFormContext.Provider value={{formData, setFormData, planArray, addOnsArray}}>
+        <SubFormContext.Provider value={{formData, setFormData, planArray, addOnsArray, currentStep, setCurrentStep}}>
             {children}
         </SubFormContext.Provider>
     )

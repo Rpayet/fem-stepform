@@ -1,8 +1,20 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, Outlet } from "react-router-dom";
+import { SubFormContext } from "../context/SubFormProvider";
 
 export default function SubscribeForm() {
-    const location = useLocation();
-    const step = location.pathname.match(/\/step(\d+)/)?.[1];
+
+    const { currentStep, setCurrentStep, setFormData } = useContext(SubFormContext);
+
+    useEffect(() => {
+        return () => {
+            setCurrentStep(1);
+            setFormData({
+                name: '', email: '', phone: '',
+                plan: {}, billing: 'monthly', addOns: [],}
+            );
+        };
+    }, []);
 
     return (
         <form id='sub-form'>
@@ -15,11 +27,15 @@ export default function SubscribeForm() {
 
             <Outlet />
 
-            {/** Todo - URL Provider */}
             <div className='btn-form-nav'>
-                {!window.location.pathname.includes('/step1') && <Link to={`/step${parseInt(step) - 1}`} >Go Back</Link>}
-                <Link to={`/step${parseInt(step) + 1}`} >Next Step</Link>
-                <Link to={'/confirm'}>Confirm</Link>
+                {(currentStep > 1 && currentStep < 5) 
+                    && <Link onClick={() => {setCurrentStep(currentStep-1)}} to={`/subscribe/step${currentStep-1}`} >Go Back</Link>}
+                {(currentStep < 4) 
+                    && <Link onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/step${currentStep + 1}`} >Next Step</Link>}
+                {currentStep === 4 
+                    && <Link onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
+                {currentStep === 5 &&
+                    <Link to='/'>Home</Link>}
             </div>
         </form>
     );

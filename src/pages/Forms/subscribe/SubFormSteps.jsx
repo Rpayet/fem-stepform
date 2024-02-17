@@ -1,12 +1,28 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom"
+import { SubFormContext } from "../../../context/SubFormProvider";
+
+export default function SubFormSteps() {
+
+    const {formData , setFormData, planArray, addOnsArray, currentStep} = useContext(SubFormContext);
+
+    switch (currentStep) {
+        case 1:
+            return <Step1 formData={formData} setFormData={setFormData} />
+        case 2:
+            return <Step2 planArray={planArray} formData={formData} setFormData={setFormData} />
+        case 3:
+            return <Step3 addOnsArray={addOnsArray} formData={formData} setFormData={setFormData} />
+        case 4:
+            return <Step4 formData={formData} />
+        case 5:
+            return <Confirm />
+        default:
+            return <Step1 formData={formData} setFormData={setFormData} />
+    }
+}
 
 export function Step1({formData, setFormData}) {
-
-    // Todo - Add validation
-    // Todo - Add error message
-    // Todo - Format Input to arrayMap
-    // Todo - Add function to handleInputChange
-
     return (
         <>
             <div>
