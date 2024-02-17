@@ -17,7 +17,7 @@ export default function SubscribeForm() {
     }, []);
 
     return (
-        <form id='sub-form'>
+        <form id='Sub-form'>
             <div className='steps-ariane'>
                 <p>1</p>
                 <p>2</p>
@@ -29,13 +29,13 @@ export default function SubscribeForm() {
 
             <div className='btn-form-nav'>
                 {(currentStep > 1 && currentStep < 5) 
-                    && <Link onClick={() => {setCurrentStep(currentStep-1)}} to={`/subscribe/step${currentStep-1}`} >Go Back</Link>}
+                    && <Link className='btn start' onClick={() => {setCurrentStep(currentStep-1)}} to={`/subscribe/step${currentStep-1}`} >Go Back</Link>}
                 {(currentStep < 4) 
-                    && <Link onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/step${currentStep + 1}`} >Next Step</Link>}
+                    && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/step${currentStep + 1}`} >Next Step</Link>}
                 {currentStep === 4 
-                    && <Link onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
+                    && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
                 {currentStep === 5 &&
-                    <Link to='/'>Home</Link>}
+                    <Link className='btn center' to='/'>Home</Link>}
             </div>
         </form>
     );

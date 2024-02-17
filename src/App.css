@@ -19,4 +19,38 @@ ul {
   list-style: none;
 }
 
+#Sub-form .steps-ariane {
+  display: flex;
+}
+#Sub-form .btn-form-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
+}
+#Sub-form .btn-form-nav .btn {
+  display: block;
+  width: fit-content;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+#Sub-form .btn-form-nav .start {
+  justify-self: flex-start;
+  color: hsl(231deg, 11%, 63%);
+}
+#Sub-form .btn-form-nav .end, #Sub-form .btn-form-nav .center {
+  background-color: hsl(213deg, 96%, 18%);
+  color: hsl(0deg, 0%, 100%);
+}
+#Sub-form .btn-form-nav .end {
+  justify-self: flex-end;
+  grid-column: 2/3;
+}
+#Sub-form .btn-form-nav .center {
+  grid-column: 1/3;
+  margin: auto;
+}
+
 /*# sourceMappingURL=App.css.map */
