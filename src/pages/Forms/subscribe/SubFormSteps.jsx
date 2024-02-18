@@ -233,10 +233,10 @@ export function Step4({formData}) {
 
 export function Confirm() {
     return (
-        <div className='step-card'>
-            <img src="../src/assets/images/icon-thank-you.svg" alt="thks" />
-            <h3>Thank you!</h3>
-            <p>Thanks for confirming your subscription! We hope you have fun using our platform. 
+        <div className='step-card confirmation'>
+            <div className='check-icon'></div>
+            <h3 className='confirmation-title'>Thank you!</h3>
+            <p className='confirmation-speech'>Thanks for confirming your subscription! We hope you have fun using our platform. 
                 If you ever need support, please feel free to email us at <a href="">support@loremgaming.com</a>.</p>
         </div>
     )

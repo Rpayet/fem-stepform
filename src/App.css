@@ -350,4 +350,25 @@ ul {
   font-weight: 700;
 }
 
+#Sub-form .step-card.confirmation {
+  text-align: center;
+  padding: 5rem 1.5rem;
+}
+#Sub-form .step-card.confirmation .check-icon {
+  width: 3rem;
+  height: 3rem;
+  background-image: url("./assets/images/icon-thank-you.svg");
+  margin: 0 auto;
+  padding: 1rem;
+}
+#Sub-form .step-card.confirmation .confirmation-title {
+  font-size: 1.5rem;
+  color: hsl(213deg, 96%, 18%);
+}
+#Sub-form .step-card.confirmation .confirmation-speech {
+  font-size: 1rem;
+  color: hsl(231deg, 11%, 63%);
+  line-height: 1.5rem;
+}
+
 /*# sourceMappingURL=App.css.map */
