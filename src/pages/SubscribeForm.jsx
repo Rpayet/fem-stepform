@@ -41,7 +41,7 @@ export default function SubscribeForm() {
                 {(currentStep < 4) 
                     && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/step${currentStep + 1}`} >Next Step</Link>}
                 {currentStep === 4 
-                    && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
+                    && <Link className='btn end confirm' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
                 {currentStep === 5 &&
                     <Link className='btn center' to='/'>Home</Link>}
             </div>

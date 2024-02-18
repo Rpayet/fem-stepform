@@ -54,7 +54,7 @@
             display: block;
             width: fit-content;
             margin: 0;
-            padding: .75rem 1rem;
+            padding: .75rem 1.25rem;
             border-radius: .25rem;
             text-decoration: none;
             font-weight: 400;
@@ -73,6 +73,10 @@
         .end {
             justify-self: flex-end;
             grid-column: 2/3;
+
+            &.confirm {
+                background-color: $Purplish-blue;
+            }
         }
 
         .center {
@@ -260,5 +264,88 @@
             @include checkbox;
         }
     
+    }
+}
+
+// Step 4
+#Sub-form {
+    .step-card {
+        .summary-container {
+            background-color: $Magnolia;
+            border-radius: .5rem;
+            padding: .5rem 1rem;
+
+            .summary-plan, .summary-addons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 1rem 0;
+            }
+
+            .summary-plan {
+                border-bottom: 1px solid $Light-gray;
+
+                .plan-info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5rem;
+
+                    .backToStep1 {
+                        width: fit-content;
+                        color: $Marine-blue;
+                        font-weight: 400;
+                        font-size: 1rem;
+                        color: $Cool-gray;
+                        cursor: pointer;
+                    }
+
+                    .plan-title {
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: $Marine-blue;
+                    }
+                }
+
+                .plan-price {
+                    font-size: 1rem;
+                    color: $Marine-blue;
+                    font-weight: 700;
+                }
+            }
+
+            .summary-addons {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .addons-title {
+                    font-size: 1rem;
+                    color: $Cool-gray;
+                }
+
+                .addons-price {
+                    font-size: 1rem;
+                    color: $Marine-blue;
+                }
+            }
+        }
+
+        .total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+
+            .billing {
+                font-size: 1rem;
+                color: $Cool-gray;
+            }
+
+            .price {
+                font-size: 1rem;
+                color: $Purplish-blue;
+                font-weight: 700;
+            }
+        }
     }
 }

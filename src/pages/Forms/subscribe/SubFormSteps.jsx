@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 import { SubFormContext } from "../../../context/SubFormProvider";
 
@@ -113,7 +113,7 @@ export function Step2({planArray, formData, setFormData}) {
             <div className='bill-option'>
                 <p className={formData.billing === 'monthly' ? 'select' : ''}>Monthly</p>
                 <div className='checkbox-wrapper-2'>
-                    <input className='sc-gJwTLC ikxBAC' type="checkbox" onChange={(e) => {handleBillChange(e)}}/>
+                    <input className='sc-gJwTLC ikxBAC' type="checkbox" checked={formData.billing === 'yearly' ? true : false} onChange={(e) => {handleBillChange(e)}}/>
                 </div>
                 <p className={formData.billing === 'yearly' ? 'select' : ''}>Yearly</p>
             </div>
@@ -179,10 +179,19 @@ export function Step3({addOnsArray, formData, setFormData}) {
     )
 }
 
-
 export function Step4({formData}) {
 
-    const billing = formData.billing === 'monthly' ? 'mo' : 'yr';
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        let total = 0;
+        total += formData.plan[formData.billing];
+        formData.addOns.forEach((a) => {
+            total += a[formData.billing];
+        });
+        setTotal(total);
+        
+    },[]);
 
     return (
         <div className='step-card'>
@@ -190,30 +199,33 @@ export function Step4({formData}) {
                 <h3 className='title'>Finishing up</h3>
                 <p className='subtitle'>Double-check everything looks OK before confirming.</p>
             </div>
-            <div>
-                <div>
-                    <div>
-                        <p>{formData.plan.name}({formData.billing})</p>
-                        <Link>Change</Link>
+            <div className='summary-container'>
+                <div className='summary-plan'>
+                    <div className='plan-info'>
+                        <p className='plan-title'>{formData.plan.name} ({formData.billing})</p>
+                        <Link className='backToStep1' to='/subscribe/step1'>Change</Link>
                     </div>
-                    <p>$9/mo</p>
+                    {formData.billing === 'monthly'
+                        ? <p className='plan-price'>${formData.plan.monthly}/mo</p>
+                        : <p className='plan-price'>${formData.plan.yearly}/yr</p>
+                    }
                 </div>
                 {formData.addOns.map((a) => (
-                    <div key={a.id}>
-                        <div>
-                            <p>{a.name}</p>
-                            <Link>Change</Link>
-                        </div>
-                        <p>+${a.monthly}/mo</p>
+                    <div className='summary-addons' key={a.id}>
+                        <p className='addons-title'>{a.name}</p>
+                        {formData.billing === 'monthly' 
+                            ?<p className='addons-price'>+${a.monthly}/mo</p>
+                            :<p className='addons-price'>+${a.yearly}/yr</p>
+                        }
                     </div>
                 ))}
-                <div>
-                    {formData.billing === 'monthly' 
-                        ? <p>Total (per month)</p>
-                        : <p>Total (per year)</p>
-                    }
-                    <p>+${}/{formData.billing === 'monthly' ? 'mo' : 'yr'}</p>
-                </div>
+            </div>
+            <div className='total'>
+                <p className='billing'>{formData.billing === 'monthly' 
+                    ? 'Total (per month)'
+                    : 'Total (per year)'
+                }</p>
+                <p className='price'>+${total}/{formData.billing === 'monthly' ? 'mo' : 'yr'}</p>
             </div>
         </div>
     )

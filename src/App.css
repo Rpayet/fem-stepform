@@ -69,7 +69,7 @@ ul {
   display: block;
   width: fit-content;
   margin: 0;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 0.25rem;
   text-decoration: none;
   font-weight: 400;
@@ -85,6 +85,9 @@ ul {
 #Sub-form .btn-form-nav .end {
   justify-self: flex-end;
   grid-column: 2/3;
+}
+#Sub-form .btn-form-nav .end.confirm {
+  background-color: hsl(243deg, 100%, 62%);
 }
 #Sub-form .btn-form-nav .center {
   grid-column: 1/3;
@@ -279,6 +282,72 @@ ul {
 }
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked:hover {
   background-color: #535db3;
+}
+
+#Sub-form .step-card .summary-container {
+  background-color: hsl(217deg, 100%, 97%);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+#Sub-form .step-card .summary-container .summary-plan, #Sub-form .step-card .summary-container .summary-addons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+#Sub-form .step-card .summary-container .summary-plan {
+  border-bottom: 1px solid hsl(229deg, 24%, 87%);
+}
+#Sub-form .step-card .summary-container .summary-plan .plan-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#Sub-form .step-card .summary-container .summary-plan .plan-info .backToStep1 {
+  width: fit-content;
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 400;
+  font-size: 1rem;
+  color: hsl(231deg, 11%, 63%);
+  cursor: pointer;
+}
+#Sub-form .step-card .summary-container .summary-plan .plan-info .plan-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: hsl(213deg, 96%, 18%);
+}
+#Sub-form .step-card .summary-container .summary-plan .plan-price {
+  font-size: 1rem;
+  color: hsl(213deg, 96%, 18%);
+  font-weight: 700;
+}
+#Sub-form .step-card .summary-container .summary-addons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#Sub-form .step-card .summary-container .summary-addons .addons-title {
+  font-size: 1rem;
+  color: hsl(231deg, 11%, 63%);
+}
+#Sub-form .step-card .summary-container .summary-addons .addons-price {
+  font-size: 1rem;
+  color: hsl(213deg, 96%, 18%);
+}
+#Sub-form .step-card .total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+#Sub-form .step-card .total .billing {
+  font-size: 1rem;
+  color: hsl(231deg, 11%, 63%);
+}
+#Sub-form .step-card .total .price {
+  font-size: 1rem;
+  color: hsl(243deg, 100%, 62%);
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=App.css.map */
