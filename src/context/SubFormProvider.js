@@ -20,6 +20,7 @@ export const SubFormProvider = ({children}) => {
             name: 'Arcade',
             monthly: 9,
             yearly: 90,
+            promo: '2 months free',
             img: 'icon-arcade.svg',
         },
         {
@@ -27,6 +28,7 @@ export const SubFormProvider = ({children}) => {
             name: 'Advanced',
             monthly: 12,
             yearly: 120,
+            promo: '2 months free',
             img: 'icon-advanced.svg',
         },
         {
@@ -34,6 +36,7 @@ export const SubFormProvider = ({children}) => {
             name: 'Pro',
             monthly: 15,
             yearly: 150,
+            promo: '2 months free',
             img: 'icon-pro.svg',
         }
     ];
@@ -42,7 +45,7 @@ export const SubFormProvider = ({children}) => {
         {
             id: 1,
             name: 'Online service',
-            details: 'Access to online multiplayer games',
+            details: 'Access to multiplayer games',
             monthly: 1,
             yearly: 10,
         },

@@ -1,13 +1,54 @@
 // LAYOUTS
 #Sub-form {
+    background-color: $Magnolia;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 20%;
+        position: absolute;
+        top: 0;
+        background-image: url('./assets/images/bg-sidebar-mobile.svg');
+    }
+    
     .steps-ariane {
+        position: relative;
         display: flex;
+        padding: 1rem;
+        margin: 1.25rem auto;
+        z-index: 100;
+        justify-content: center;
+        gap: 1.25rem;
+
+        .step {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 1px solid $White;
+
+            &.active {
+                background-color: $Light-blue;
+                border: 1px solid transparent;
+            }
+
+            &.inactive {
+                color: $White;
+            }
+        }
     }
 
     .btn-form-nav {
+        background-color: $White;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin: 1rem;
+        padding: 1rem;
         
         .btn {
             display: block;
@@ -16,7 +57,7 @@
             padding: .75rem 1rem;
             border-radius: .25rem;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 400;
         }
 
         .start {
@@ -42,3 +83,182 @@
 }
 
 // STEPS PAGES
+// Step 1
+#Sub-form {
+    .step-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: $White;
+        padding: 2rem 1rem;
+        border-radius: .5rem;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .1);
+        margin: 1rem;
+        gap: 1.5rem;
+        z-index: 100;
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            .title {
+                font-size: 1.5rem;
+                color: $Marine-blue;
+            }
+
+            .subtitle{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                color: $Cool-gray;
+            }
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            .label, .input {
+                display: block;
+                margin: .5rem 0;
+                font-weight: 500;
+            }
+
+            .label {
+                font-size: .85rem;
+                color: $Marine-blue;
+            }
+
+            .input {
+                padding: .75rem;
+                border: 1px solid $Cool-gray;
+                border-radius: .25rem;
+                width: 90%;
+            }
+        }
+    }
+}
+
+// Step 2 & 3
+#Sub-form {
+    .step-card {
+        .plan-container, .addons-container {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+    
+            .plan-card, .addons-card {
+                display: flex;
+                padding: 1.5rem 1rem;
+                border-radius: .75rem;
+                gap: 1rem;
+                border: 1px solid $Light-gray;
+    
+                &.active {
+                    background-color: $Magnolia;
+                    border: 1px solid $Purplish-blue;
+                }
+            }
+
+            .plan-card {
+    
+                .arcade, .advanced, .pro {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+    
+                .arcade {
+                    background-image: url('./assets/images/icon-arcade.svg');
+                }
+    
+                .advanced {
+                    background-image: url('./assets/images/icon-advanced.svg');
+                }
+    
+                .pro {
+                    background-image: url('./assets/images/icon-pro.svg');
+                }
+    
+                .plan-bill {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .25rem;
+                    transition: all .1s ease-in-out;
+    
+                    .bill-title {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: $Marine-blue;
+                    }
+    
+                    .bill-price {
+                        font-size: .85rem;
+                        color: $Cool-gray;
+                    }
+
+                    .bill-promo {
+                        font-size: .75rem;
+                        color: $Marine-blue;
+                        font-weight: 500;
+                    }
+                }
+    
+            }
+
+            .addons-card {
+                padding: 1rem;
+
+                .addons-plan {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    gap : .25rem;
+                    
+                    .addon {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+                        
+                        .addon-title {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: $Marine-blue;
+                        }
+                        .addon-details {
+                            font-size: .8rem;
+                            color: $Cool-gray;
+                        }
+                    }
+    
+                    .addon-price {
+                        font-size: .75rem;
+                        color: $Purplish-blue;
+                    }
+                }
+    
+            }
+        }
+
+        .bill-option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background-color: $Alabaster;
+            padding: 1rem; 
+            border-radius: .5rem;
+            color: $Cool-gray;
+
+            .select {
+                color: $Marine-blue;
+                font-weight: 500;
+                transition: all .1s ease-in-out;
+            }
+
+            @include checkbox;
+        }
+    
+    }
+}

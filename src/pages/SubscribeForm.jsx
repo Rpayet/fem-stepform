@@ -7,6 +7,12 @@ export default function SubscribeForm() {
     const { currentStep, setCurrentStep, setFormData } = useContext(SubFormContext);
 
     useEffect(() => {
+
+        if (window.location.pathname.includes('step')) {
+            const step = parseInt(window.location.pathname.slice(-1));
+            setCurrentStep(step);
+        }
+
         return () => {
             setCurrentStep(1);
             setFormData({
@@ -18,14 +24,16 @@ export default function SubscribeForm() {
 
     return (
         <form id='Sub-form'>
-            <div className='steps-ariane'>
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-                <p>4</p>
-            </div>
+            <div>
+                <div className='steps-ariane'>
+                    <p className={`step ${currentStep === 1 ? 'active' : 'inactive'}`}>1</p>
+                    <p className={`step ${currentStep === 2 ? 'active' : 'inactive'}`}>2</p>
+                    <p className={`step ${currentStep === 3 ? 'active' : 'inactive'}`}>3</p>
+                    <p className={`step ${currentStep === 4 || currentStep === 5 ? 'active' : 'inactive'}`}>4</p>
+                </div>
 
-            <Outlet />
+                <Outlet />
+            </div>
 
             <div className='btn-form-nav'>
                 {(currentStep > 1 && currentStep < 5) 
