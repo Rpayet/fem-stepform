@@ -1,0 +1,57 @@
+//SubForm
+//Step 1
+#Sub-form {
+    .step-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: $White;
+        padding: 2rem 1rem;
+        border-radius: .5rem;
+        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .1);
+        margin: 1rem;
+        gap: 1.5rem;
+        z-index: 100;
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            .title {
+                font-size: 1.5rem;
+                color: $Marine-blue;
+            }
+
+            .subtitle{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                color: $Cool-gray;
+            }
+        }
+
+        .body {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            .label, .input {
+                display: block;
+                margin: .5rem 0;
+                font-weight: 500;
+            }
+
+            .label {
+                font-size: .85rem;
+                color: $Marine-blue;
+            }
+
+            .input {
+                padding: .75rem;
+                border: 1px solid $Cool-gray;
+                border-radius: .25rem;
+                width: 90%;
+            }
+        }
+    }    
+}

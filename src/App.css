@@ -19,86 +19,11 @@ ul {
   list-style: none;
 }
 
-#Sub-form {
-  background-color: hsl(217deg, 100%, 97%);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-}
-#Sub-form::after {
-  content: "";
-  width: 100%;
-  height: 20%;
-  position: absolute;
-  top: 0;
-  background-image: url("./assets/images/bg-sidebar-mobile.svg");
-}
-#Sub-form .steps-ariane {
-  position: relative;
-  display: flex;
-  padding: 1rem;
-  margin: 1.25rem auto;
-  z-index: 100;
-  justify-content: center;
-  gap: 1.25rem;
-}
-#Sub-form .steps-ariane .step {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 50%;
-  border: 1px solid hsl(0deg, 0%, 100%);
-}
-#Sub-form .steps-ariane .step.active {
-  background-color: hsl(206deg, 94%, 87%);
-  border: 1px solid transparent;
-}
-#Sub-form .steps-ariane .step.inactive {
-  color: hsl(0deg, 0%, 100%);
-}
-#Sub-form .btn-form-nav {
-  background-color: hsl(0deg, 0%, 100%);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 1rem;
-}
-#Sub-form .btn-form-nav .btn {
-  display: block;
-  width: fit-content;
-  margin: 0;
-  padding: 0.75rem 1.25rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  font-weight: 400;
-}
-#Sub-form .btn-form-nav .start {
-  justify-self: flex-start;
-  color: hsl(231deg, 11%, 63%);
-}
-#Sub-form .btn-form-nav .end, #Sub-form .btn-form-nav .center {
-  background-color: hsl(213deg, 96%, 18%);
-  color: hsl(0deg, 0%, 100%);
-}
-#Sub-form .btn-form-nav .end {
-  justify-self: flex-end;
-  grid-column: 2/3;
-}
-#Sub-form .btn-form-nav .end.confirm {
-  background-color: hsl(243deg, 100%, 62%);
-}
-#Sub-form .btn-form-nav .center {
-  grid-column: 1/3;
-  margin: auto;
-}
-
 #Sub-form .step-card {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: hsl(0deg, 0%, 100%);
+  background-color: hsl(0, 0%, 100%);
   padding: 2rem 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.1);
@@ -113,12 +38,12 @@ ul {
 }
 #Sub-form .step-card .header .title {
   font-size: 1.5rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .header .subtitle {
   font-size: 1rem;
   line-height: 1.5rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .body {
   display: flex;
@@ -132,11 +57,11 @@ ul {
 }
 #Sub-form .step-card .body .label {
   font-size: 0.85rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .body .input {
   padding: 0.75rem;
-  border: 1px solid hsl(231deg, 11%, 63%);
+  border: 1px solid hsl(231, 11%, 63%);
   border-radius: 0.25rem;
   width: 90%;
 }
@@ -151,11 +76,11 @@ ul {
   padding: 1.5rem 1rem;
   border-radius: 0.75rem;
   gap: 1rem;
-  border: 1px solid hsl(229deg, 24%, 87%);
+  border: 1px solid hsl(229, 24%, 87%);
 }
 #Sub-form .step-card .plan-container .plan-card.active, #Sub-form .step-card .plan-container .addons-card.active, #Sub-form .step-card .addons-container .plan-card.active, #Sub-form .step-card .addons-container .addons-card.active {
-  background-color: hsl(217deg, 100%, 97%);
-  border: 1px solid hsl(243deg, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+  border: 1px solid hsl(243, 100%, 62%);
 }
 #Sub-form .step-card .plan-container .plan-card .arcade, #Sub-form .step-card .plan-container .plan-card .advanced, #Sub-form .step-card .plan-container .plan-card .pro, #Sub-form .step-card .addons-container .plan-card .arcade, #Sub-form .step-card .addons-container .plan-card .advanced, #Sub-form .step-card .addons-container .plan-card .pro {
   width: 2.5rem;
@@ -179,15 +104,15 @@ ul {
 #Sub-form .step-card .plan-container .plan-card .plan-bill .bill-title, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-title {
   font-size: 1rem;
   font-weight: 500;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .plan-container .plan-card .plan-bill .bill-price, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-price {
   font-size: 0.85rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .plan-container .plan-card .plan-bill .bill-promo, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-promo {
   font-size: 0.75rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
   font-weight: 500;
 }
 #Sub-form .step-card .plan-container .addons-card, #Sub-form .step-card .addons-container .addons-card {
@@ -208,34 +133,177 @@ ul {
 #Sub-form .step-card .plan-container .addons-card .addons-plan .addon .addon-title, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon .addon-title {
   font-size: 1rem;
   font-weight: 500;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .plan-container .addons-card .addons-plan .addon .addon-details, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon .addon-details {
   font-size: 0.8rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .plan-container .addons-card .addons-plan .addon-price, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon-price {
   font-size: 0.75rem;
-  color: hsl(243deg, 100%, 62%);
+  color: hsl(243, 100%, 62%);
 }
 #Sub-form .step-card .bill-option {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  background-color: hsl(231deg, 100%, 99%);
+  background-color: hsl(231, 100%, 99%);
   padding: 1rem;
   border-radius: 0.5rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .bill-option .select {
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
   font-weight: 500;
   transition: all 0.1s ease-in-out;
 }
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC {
   appearance: none;
-  background-color: hsl(213deg, 96%, 18%);
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 72px;
+  border-style: none;
+  flex-shrink: 0;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  width: 40px;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC::before {
+  bottom: -6px;
+  content: "";
+  left: -6px;
+  position: absolute;
+  right: -6px;
+  top: -6px;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC,
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC::after {
+  transition: all 100ms ease-out;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC::after {
+  background-color: #fff;
+  border-radius: 50%;
+  content: "";
+  height: 14px;
+  left: 3px;
+  position: absolute;
+  top: 3px;
+  width: 14px;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 input[type=checkbox] {
+  cursor: default;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:hover {
+  background-color: #c9cbcd;
+  transition-duration: 0s;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked::after {
+  background-color: #fff;
+  left: 23px;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 :focus:not(.focus-visible) {
+  outline: 0;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked:hover {
+  background-color: #535db3;
+}
+
+#Sub-form .step-card .plan-container, #Sub-form .step-card .addons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#Sub-form .step-card .plan-container .plan-card, #Sub-form .step-card .plan-container .addons-card, #Sub-form .step-card .addons-container .plan-card, #Sub-form .step-card .addons-container .addons-card {
+  display: flex;
+  padding: 1.5rem 1rem;
+  border-radius: 0.75rem;
+  gap: 1rem;
+  border: 1px solid hsl(229, 24%, 87%);
+}
+#Sub-form .step-card .plan-container .plan-card.active, #Sub-form .step-card .plan-container .addons-card.active, #Sub-form .step-card .addons-container .plan-card.active, #Sub-form .step-card .addons-container .addons-card.active {
+  background-color: hsl(217, 100%, 97%);
+  border: 1px solid hsl(243, 100%, 62%);
+}
+#Sub-form .step-card .plan-container .plan-card .arcade, #Sub-form .step-card .plan-container .plan-card .advanced, #Sub-form .step-card .plan-container .plan-card .pro, #Sub-form .step-card .addons-container .plan-card .arcade, #Sub-form .step-card .addons-container .plan-card .advanced, #Sub-form .step-card .addons-container .plan-card .pro {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+#Sub-form .step-card .plan-container .plan-card .arcade, #Sub-form .step-card .addons-container .plan-card .arcade {
+  background-image: url("./assets/images/icon-arcade.svg");
+}
+#Sub-form .step-card .plan-container .plan-card .advanced, #Sub-form .step-card .addons-container .plan-card .advanced {
+  background-image: url("./assets/images/icon-advanced.svg");
+}
+#Sub-form .step-card .plan-container .plan-card .pro, #Sub-form .step-card .addons-container .plan-card .pro {
+  background-image: url("./assets/images/icon-pro.svg");
+}
+#Sub-form .step-card .plan-container .plan-card .plan-bill, #Sub-form .step-card .addons-container .plan-card .plan-bill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  transition: all 0.1s ease-in-out;
+}
+#Sub-form .step-card .plan-container .plan-card .plan-bill .bill-title, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+#Sub-form .step-card .plan-container .plan-card .plan-bill .bill-price, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-price {
+  font-size: 0.85rem;
+  color: hsl(231, 11%, 63%);
+}
+#Sub-form .step-card .plan-container .plan-card .plan-bill .bill-promo, #Sub-form .step-card .addons-container .plan-card .plan-bill .bill-promo {
+  font-size: 0.75rem;
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+#Sub-form .step-card .plan-container .addons-card, #Sub-form .step-card .addons-container .addons-card {
+  padding: 1rem;
+}
+#Sub-form .step-card .plan-container .addons-card .addons-plan, #Sub-form .step-card .addons-container .addons-card .addons-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 0.25rem;
+}
+#Sub-form .step-card .plan-container .addons-card .addons-plan .addon, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#Sub-form .step-card .plan-container .addons-card .addons-plan .addon .addon-title, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon .addon-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(213, 96%, 18%);
+}
+#Sub-form .step-card .plan-container .addons-card .addons-plan .addon .addon-details, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon .addon-details {
+  font-size: 0.8rem;
+  color: hsl(231, 11%, 63%);
+}
+#Sub-form .step-card .plan-container .addons-card .addons-plan .addon-price, #Sub-form .step-card .addons-container .addons-card .addons-plan .addon-price {
+  font-size: 0.75rem;
+  color: hsl(243, 100%, 62%);
+}
+#Sub-form .step-card .bill-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: hsl(231, 100%, 99%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  color: hsl(231, 11%, 63%);
+}
+#Sub-form .step-card .bill-option .select {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+  transition: all 0.1s ease-in-out;
+}
+#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC {
+  appearance: none;
+  background-color: hsl(213, 96%, 18%);
   border-radius: 72px;
   border-style: none;
   flex-shrink: 0;
@@ -285,7 +353,7 @@ ul {
 }
 
 #Sub-form .step-card .summary-container {
-  background-color: hsl(217deg, 100%, 97%);
+  background-color: hsl(217, 100%, 97%);
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
 }
@@ -296,7 +364,7 @@ ul {
   padding: 1rem 0;
 }
 #Sub-form .step-card .summary-container .summary-plan {
-  border-bottom: 1px solid hsl(229deg, 24%, 87%);
+  border-bottom: 1px solid hsl(229, 24%, 87%);
 }
 #Sub-form .step-card .summary-container .summary-plan .plan-info {
   display: flex;
@@ -305,20 +373,20 @@ ul {
 }
 #Sub-form .step-card .summary-container .summary-plan .plan-info .backToStep1 {
   width: fit-content;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
   font-weight: 400;
   font-size: 1rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
   cursor: pointer;
 }
 #Sub-form .step-card .summary-container .summary-plan .plan-info .plan-title {
   font-size: 1rem;
   font-weight: 700;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .summary-container .summary-plan .plan-price {
   font-size: 1rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
   font-weight: 700;
 }
 #Sub-form .step-card .summary-container .summary-addons {
@@ -328,11 +396,11 @@ ul {
 }
 #Sub-form .step-card .summary-container .summary-addons .addons-title {
   font-size: 1rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .summary-container .summary-addons .addons-price {
   font-size: 1rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .total {
   display: flex;
@@ -342,11 +410,11 @@ ul {
 }
 #Sub-form .step-card .total .billing {
   font-size: 1rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
 }
 #Sub-form .step-card .total .price {
   font-size: 1rem;
-  color: hsl(243deg, 100%, 62%);
+  color: hsl(243, 100%, 62%);
   font-weight: 700;
 }
 
@@ -363,12 +431,86 @@ ul {
 }
 #Sub-form .step-card.confirmation .confirmation-title {
   font-size: 1.5rem;
-  color: hsl(213deg, 96%, 18%);
+  color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card.confirmation .confirmation-speech {
   font-size: 1rem;
-  color: hsl(231deg, 11%, 63%);
+  color: hsl(231, 11%, 63%);
   line-height: 1.5rem;
+}
+
+#Sub-form {
+  background-color: hsl(217, 100%, 97%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+#Sub-form::after {
+  content: "";
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 0;
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+}
+#Sub-form .steps-ariane {
+  position: relative;
+  display: flex;
+  padding: 1rem;
+  margin: 1.25rem auto;
+  z-index: 100;
+  justify-content: center;
+  gap: 1.25rem;
+}
+#Sub-form .steps-ariane .step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+#Sub-form .steps-ariane .step.active {
+  background-color: hsl(206, 94%, 87%);
+  border: 1px solid transparent;
+}
+#Sub-form .steps-ariane .step.inactive {
+  color: hsl(0, 0%, 100%);
+}
+#Sub-form .btn-form-nav {
+  background-color: hsl(0, 0%, 100%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1rem;
+}
+#Sub-form .btn-form-nav .btn {
+  display: block;
+  width: fit-content;
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 400;
+}
+#Sub-form .btn-form-nav .start {
+  justify-self: flex-start;
+  color: hsl(231, 11%, 63%);
+}
+#Sub-form .btn-form-nav .end, #Sub-form .btn-form-nav .center {
+  background-color: hsl(213, 96%, 18%);
+  color: hsl(0, 0%, 100%);
+}
+#Sub-form .btn-form-nav .end {
+  justify-self: flex-end;
+  grid-column: 2/3;
+}
+#Sub-form .btn-form-nav .end.confirm {
+  background-color: hsl(243, 100%, 62%);
+}
+#Sub-form .btn-form-nav .center {
+  grid-column: 1/3;
+  margin: auto;
 }
 
 /*# sourceMappingURL=App.css.map */

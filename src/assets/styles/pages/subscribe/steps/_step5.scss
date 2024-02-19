@@ -1,0 +1,29 @@
+//SubForm
+//Step 5
+#Sub-form {
+    .step-card {
+        &.confirmation {
+            text-align: center;
+            padding : 5rem 1.5rem;
+    
+            .check-icon {
+                width: 3rem;
+                height: 3rem;
+                background-image: url('./assets/images/icon-thank-you.svg');
+                margin: 0 auto;
+                padding: 1rem;
+            }
+    
+            .confirmation-title {
+                font-size: 1.5rem;
+                color: $Marine-blue;
+            }
+    
+            .confirmation-speech {
+                font-size: 1rem;
+                color: $Cool-gray;
+                line-height: 1.5rem;
+            }
+        }
+    }    
+}

@@ -1,0 +1,122 @@
+//SubForm
+//Step 2
+#Sub-form {
+    .step-card {
+        .plan-container, .addons-container {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+    
+            .plan-card, .addons-card {
+                display: flex;
+                padding: 1.5rem 1rem;
+                border-radius: .75rem;
+                gap: 1rem;
+                border: 1px solid $Light-gray;
+    
+                &.active {
+                    background-color: $Magnolia;
+                    border: 1px solid $Purplish-blue;
+                }
+            }
+
+            .plan-card {
+    
+                .arcade, .advanced, .pro {
+                    width: 2.5rem;
+                    height: 2.5rem;
+                }
+    
+                .arcade {
+                    background-image: url('./assets/images/icon-arcade.svg');
+                }
+    
+                .advanced {
+                    background-image: url('./assets/images/icon-advanced.svg');
+                }
+    
+                .pro {
+                    background-image: url('./assets/images/icon-pro.svg');
+                }
+    
+                .plan-bill {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .25rem;
+                    transition: all .1s ease-in-out;
+    
+                    .bill-title {
+                        font-size: 1rem;
+                        font-weight: 500;
+                        color: $Marine-blue;
+                    }
+    
+                    .bill-price {
+                        font-size: .85rem;
+                        color: $Cool-gray;
+                    }
+
+                    .bill-promo {
+                        font-size: .75rem;
+                        color: $Marine-blue;
+                        font-weight: 500;
+                    }
+                }
+    
+            }
+
+            .addons-card {
+                padding: 1rem;
+
+                .addons-plan {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    gap : .25rem;
+                    
+                    .addon {
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+                        
+                        .addon-title {
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: $Marine-blue;
+                        }
+                        .addon-details {
+                            font-size: .8rem;
+                            color: $Cool-gray;
+                        }
+                    }
+    
+                    .addon-price {
+                        font-size: .75rem;
+                        color: $Purplish-blue;
+                    }
+                }
+    
+            }
+        }
+
+        .bill-option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            background-color: $Alabaster;
+            padding: 1rem; 
+            border-radius: .5rem;
+            color: $Cool-gray;
+
+            .select {
+                color: $Marine-blue;
+                font-weight: 500;
+                transition: all .1s ease-in-out;
+            }
+
+            @include checkbox;
+        }
+    }
+}

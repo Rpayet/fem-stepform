@@ -21,6 +21,9 @@ export default function SubFormSteps() {
 }
 
 export function Step1({formData, setFormData}) {
+
+    // Todo - Add validation
+
     return (
         <div className='step-card'>
             <div className='header'>

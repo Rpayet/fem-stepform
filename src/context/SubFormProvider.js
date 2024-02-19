@@ -4,6 +4,8 @@ export const SubFormContext = createContext();
 
 export const SubFormProvider = ({children}) => {
 
+    const [currentStep, setCurrentStep] = useState(1);
+
     // todo - Only use id to fill plan & addOns
     const [formData, setFormData] = useState({
         name: '',
@@ -14,6 +16,7 @@ export const SubFormProvider = ({children}) => {
         addOns: [],
     });
 
+    // todo - make a json to fake call to a server
     const planArray = [
         {
             id: 1,
@@ -64,8 +67,6 @@ export const SubFormProvider = ({children}) => {
             yearly: 20,
         }
     ];
-
-    const [currentStep, setCurrentStep] = useState(1);
     
     return (
         <SubFormContext.Provider value={{formData, setFormData, planArray, addOnsArray, currentStep, setCurrentStep}}>
