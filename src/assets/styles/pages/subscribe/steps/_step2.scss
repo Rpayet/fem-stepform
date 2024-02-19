@@ -2,12 +2,12 @@
 //Step 2
 #Sub-form {
     .step-card {
-        .plan-container, .addons-container {
+        .plan-container {
             display: flex;
             flex-direction: column;
             gap: .75rem;
     
-            .plan-card, .addons-card {
+            .plan-card {
                 display: flex;
                 padding: 1.5rem 1rem;
                 border-radius: .75rem;
@@ -18,13 +18,11 @@
                     background-color: $Magnolia;
                     border: 1px solid $Purplish-blue;
                 }
-            }
-
-            .plan-card {
     
                 .arcade, .advanced, .pro {
                     width: 2.5rem;
                     height: 2.5rem;
+                    background-repeat: no-repeat;
                 }
     
                 .arcade {
@@ -65,39 +63,6 @@
     
             }
 
-            .addons-card {
-                padding: 1rem;
-
-                .addons-plan {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    width: 100%;
-                    gap : .25rem;
-                    
-                    .addon {
-                        display: flex;
-                        flex-direction: column;
-                        gap: .5rem;
-                        
-                        .addon-title {
-                            font-size: 1rem;
-                            font-weight: 500;
-                            color: $Marine-blue;
-                        }
-                        .addon-details {
-                            font-size: .8rem;
-                            color: $Cool-gray;
-                        }
-                    }
-    
-                    .addon-price {
-                        font-size: .75rem;
-                        color: $Purplish-blue;
-                    }
-                }
-    
-            }
         }
 
         .bill-option {
@@ -117,6 +82,24 @@
             }
 
             @include checkbox;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #Sub-form {
+        .step-card {
+
+            .plan-container {
+                flex-direction: row;
+                justify-content: center;
+
+                .plan-card {
+                    width: 30%;
+                    flex-direction: column;
+
+                }
+            }
         }
     }
 }
