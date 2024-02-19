@@ -444,23 +444,25 @@ ul {
   display: flex;
   flex-direction: column;
   height: 100vh;
-}
-#Sub-form::after {
-  content: "";
-  width: 100%;
-  height: 20%;
-  position: absolute;
-  top: 0;
-  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  position: relative;
 }
 #Sub-form .steps-ariane {
   position: relative;
   display: flex;
-  padding: 1rem;
-  margin: 1.25rem auto;
-  z-index: 100;
+  padding: 2.5rem 1rem 1rem;
+  margin: 0 auto;
   justify-content: center;
   gap: 1.25rem;
+  z-index: 100;
+}
+#Sub-form .steps-ariane::after {
+  content: "";
+  width: 100vw;
+  height: 20vh;
+  position: absolute;
+  top: 0;
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  z-index: -1;
 }
 #Sub-form .steps-ariane .step {
   display: flex;
@@ -479,6 +481,10 @@ ul {
   color: hsl(0, 0%, 100%);
 }
 #Sub-form .btn-form-nav {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
   background-color: hsl(0, 0%, 100%);
   display: grid;
   grid-template-columns: 1fr 1fr;

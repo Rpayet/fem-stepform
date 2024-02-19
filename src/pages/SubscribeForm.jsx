@@ -32,7 +32,7 @@ export default function SubscribeForm() {
                 <p className={`step ${currentStep === 4 || currentStep === 5 ? 'active' : 'inactive'}`}>4</p>
             </div>
 
-            <Outlet />
+            <Outlet /> {/* stepcard - nested routes */}
 
             <div className='btn-form-nav'>
                 {(currentStep > 1 && currentStep < 5) 
