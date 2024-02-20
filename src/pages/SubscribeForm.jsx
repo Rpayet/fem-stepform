@@ -25,11 +25,35 @@ export default function SubscribeForm() {
     return (
         <form id='Sub-form'>
             {/** todo - json to array map */}
-            <div className='steps-ariane'>
-                <p className={`step ${currentStep === 1 ? 'active' : 'inactive'}`}>1</p>
-                <p className={`step ${currentStep === 2 ? 'active' : 'inactive'}`}>2</p>
-                <p className={`step ${currentStep === 3 ? 'active' : 'inactive'}`}>3</p>
-                <p className={`step ${currentStep === 4 || currentStep === 5 ? 'active' : 'inactive'}`}>4</p>
+            <div className='registration-steps'>
+                <div className='step'>
+                    <p className={`step-token ${currentStep === 1 ? 'active' : 'inactive'}`}>1</p>
+                    <div className='step-details'>
+                        <p className='step-title'>Step 1</p>
+                        <p className='step-subtitle'>Your info</p>
+                    </div>
+                </div>
+                <div className='step'>
+                    <p className={`step-token ${currentStep === 2 ? 'active' : 'inactive'}`}>2</p>
+                    <div className='step-details'>
+                        <p className='step-title'>Step 2</p>
+                        <p className='step-subtitle'>Select plan</p>
+                    </div>
+                </div>
+                <div className='step'>
+                    <p className={`step-token ${currentStep === 3 ? 'active' : 'inactive'}`}>3</p>
+                    <div className='step-details'>
+                        <p className='step-title'>Step 3</p>
+                        <p className='step-subtitle'>Add-ons</p>
+                    </div>
+                </div>
+                <div className='step'>
+                    <p className={`step-token ${currentStep === 4 || currentStep === 5 ? 'active' : 'inactive'}`}>4</p>
+                    <div className='step-details'>
+                        <p className='step-title'>Step 4</p>
+                        <p className='step-subtitle'>Summary</p>
+                    </div>
+                </div>
             </div>
 
             <Outlet /> {/* stepcard - nested routes */}

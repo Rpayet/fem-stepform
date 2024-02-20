@@ -2,31 +2,13 @@
 //Step 1
 #Sub-form {
     .step-card {
-        .header {
-            display: flex;
-            flex-direction: column;
-            gap: .75rem;
-
-            .title {
-                font-size: 1.5rem;
-                color: $Marine-blue;
-            }
-
-            .subtitle{
-                font-size: 1rem;
-                line-height: 1.5rem;
-                color: $Cool-gray;
-            }
-        }
-
-        .body {
+        .info {
             display: flex;
             flex-direction: column;
             gap: .5rem;
+            width: 100%;
 
             .label, .input {
-                display: block;
-                margin: .5rem 0;
                 font-weight: 500;
             }
 
@@ -36,10 +18,10 @@
             }
 
             .input {
-                padding: .75rem;
                 border: 1px solid $Cool-gray;
                 border-radius: .25rem;
-                width: 90%;
+                padding: .75rem;
+                margin-bottom: .5rem;
             }
         }
     }    

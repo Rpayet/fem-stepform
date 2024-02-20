@@ -11,7 +11,7 @@
     height: 100vh;
     position: relative;
     
-    .steps-ariane {
+    .registration-steps {
         position: relative;
         display: flex;
         padding: 2.5rem 1rem 1rem;
@@ -32,20 +32,29 @@
 
         .step {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            border: 1px solid $White;
+            gap: 1rem;
 
-            &.active {
-                background-color: $Light-blue;
-                border: 1px solid transparent;
+            .step-details {
+                display: none;
             }
 
-            &.inactive {
-                color: $White;
+            .step-token {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                border: 1px solid $White;
+    
+                &.active {
+                    background-color: $Light-blue;
+                    border: 1px solid transparent;
+                }
+    
+                &.inactive {
+                    color: $White;
+                }
             }
         }
     }
@@ -61,6 +70,23 @@
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .1);
         gap: 1.5rem;
         z-index: 100;
+
+        .card-header {
+            display: flex;
+            flex-direction: column;
+            gap: .75rem;
+
+            .title {
+                font-size: 1.5rem;
+                color: $Marine-blue;
+            }
+
+            .subtitle{
+                font-size: 1rem;
+                line-height: 1.5rem;
+                color: $Cool-gray;
+            }
+        }
     }
 
     .btn-form-nav {
@@ -116,13 +142,13 @@
         height: 500px;
         border-radius: 1rem;
         display: grid;
-        grid-template-columns: 25% 65%;
+        grid-template-columns: 25% 60%;
         grid-template-rows: repeat(2, 1fr);
         grid-column-gap: 70px;
         grid-row-gap: 0px;
         padding: 1rem;      
 
-        .steps-ariane {
+        .registration-steps {
             flex-direction: column;
             justify-content: flex-start;
             width: 100%;
@@ -139,22 +165,39 @@
                 background-repeat: no-repeat;
                 border-radius: 1rem
             }
+
+            .step {
+                padding: .25rem;
+
+                .step-details {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .25rem;
+                    text-transform: uppercase;
+                    
+                    .step-title {
+                        color: $Cool-gray;
+                        font-size: .75rem;
+                    }
+
+                    .step-subtitle {
+                        color: $White;
+                        font-size: 1rem;
+                    }
+                }
+            }
         }
 
         .step-card {
-            width: 100%;
-            justify-self: center;
             margin: 0;
             background-color: transparent;
             box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0);
             grid-area: 1 / 2 / 2 / 3;
-
         }
 
         .btn-form-nav{
             justify-self: center;
             margin: 0;
-            padding: 1rem 0;
             background-color: transparent;
             grid-area: 2 / 2 / 3 / 3;
         }

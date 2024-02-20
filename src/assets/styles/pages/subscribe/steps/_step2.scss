@@ -2,7 +2,7 @@
 //Step 2
 #Sub-form {
     .step-card {
-        .plan-container {
+        .plans {
             display: flex;
             flex-direction: column;
             gap: .75rem;
@@ -90,7 +90,7 @@
     #Sub-form {
         .step-card {
 
-            .plan-container {
+            .plans {
                 flex-direction: row;
                 justify-content: center;
 

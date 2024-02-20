@@ -26,43 +26,37 @@ export function Step1({formData, setFormData}) {
 
     return (
         <div className='step-card'>
-            <div className='header'>
+            <div className='card-header'>
                 <h3 className='title'>Personal info</h3>
                 <p className='subtitle'>Please provide your name, email address, and phone number.</p>
             </div>
-            <div className='body'>
-                <div>
-                    <label className='label' htmlFor='name'>Name</label>
-                    <input 
-                        type='text' 
-                        id='name'
-                        className='input'
-                        placeholder="e.g. Stephen king"
-                        value={formData.name}
-                        onChange={(e) => {setFormData({...formData, name: e.target.value})}} />
-                </div>
+            <div className='info'>
+                <label className='label' htmlFor='name'>Name</label>
+                <input 
+                    type='text' 
+                    id='name'
+                    className='input'
+                    placeholder="e.g. Stephen king"
+                    value={formData.name}
+                    onChange={(e) => {setFormData({...formData, name: e.target.value})}} />
 
-                <div>
-                    <label className='label' htmlFor='email'>Email Address</label>
-                    <input 
-                        type='email'
-                        id='email'
-                        className='input'
-                        placeholder="e.g. stephenking@lorem.com"
-                        value={formData.email}
-                        onChange={(e) => {setFormData({...formData, email: e.target.value})}} />
-                </div>
+                <label className='label' htmlFor='email'>Email Address</label>
+                <input 
+                    type='email'
+                    id='email'
+                    className='input'
+                    placeholder="e.g. stephenking@lorem.com"
+                    value={formData.email}
+                    onChange={(e) => {setFormData({...formData, email: e.target.value})}} />
 
-                <div>
-                    <label className='label' htmlFor='phone'>Phone Number</label>
-                    <input 
-                        type='tel' 
-                        id='phone'
-                        className='input'
-                        placeholder="e.g. +1 234 567 890"
-                        value={formData.phone}
-                        onChange={(e) => {setFormData({...formData, phone: e.target.value})}} />
-                </div>
+                <label className='label' htmlFor='phone'>Phone Number</label>
+                <input 
+                    type='tel' 
+                    id='phone'
+                    className='input'
+                    placeholder="e.g. +1 234 567 890"
+                    value={formData.phone}
+                    onChange={(e) => {setFormData({...formData, phone: e.target.value})}} />
             </div>
         </div>
     )
@@ -87,11 +81,11 @@ export function Step2({planArray, formData, setFormData}) {
 
     return (
         <div className='step-card'>
-            <div className='header'>
+            <div className='card-header'>
                 <h3 className='title'>Select your plan</h3>
                 <p className='subtitle'>You have the option of monthly or yearly billing.</p>
             </div>
-            <div className='plan-container'>
+            <div className='plans'>
                 {planArray.map((p) => (
                     <div 
                         key={p.id} 
@@ -147,11 +141,11 @@ export function Step3({addOnsArray, formData, setFormData}) {
 
     return (
         <div className='step-card'>
-            <div className='header'>
+            <div className='card-header'>
                 <h3 className='title'>Pick add-ons</h3>
                 <p className='subtitle'>Add-ons help enhance your gaming experience.</p>
             </div>
-            <div className='addons-container'>
+            <div className='addons'>
                 {addOnsArray.map((a) => (
                     <div 
                         key={a.id} 
@@ -198,12 +192,12 @@ export function Step4({formData}) {
 
     return (
         <div className='step-card'>
-            <div className='header'>
+            <div className='card-header'>
                 <h3 className='title'>Finishing up</h3>
                 <p className='subtitle'>Double-check everything looks OK before confirming.</p>
             </div>
-            <div className='summary-container'>
-                <div className='summary-plan'>
+            <div className='summary'>
+                <div className='summary-plan' style={formData.addOns.length === 0 ? {borderBottomColor: 'transparent'} : null}>
                     <div className='plan-info'>
                         <p className='plan-title'>{formData.plan.name} ({formData.billing})</p>
                         <Link className='backToStep1' to='/subscribe/step1'>Change</Link>
@@ -217,8 +211,8 @@ export function Step4({formData}) {
                     <div className='summary-addons' key={a.id}>
                         <p className='addons-title'>{a.name}</p>
                         {formData.billing === 'monthly' 
-                            ?<p className='addons-price'>+${a.monthly}/mo</p>
-                            :<p className='addons-price'>+${a.yearly}/yr</p>
+                            ? <p className='addons-price'>+${a.monthly}/mo</p>
+                            : <p className='addons-price'>+${a.yearly}/yr</p>
                         }
                     </div>
                 ))}
