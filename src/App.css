@@ -33,10 +33,18 @@ ul {
   color: hsl(213, 96%, 18%);
 }
 #Sub-form .step-card .info .input {
-  border: 1px solid hsl(231, 11%, 63%);
+  color: hsl(213, 96%, 18%);
+  border: 1px solid hsl(229, 24%, 87%);
   border-radius: 0.25rem;
   padding: 0.75rem;
   margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+#Sub-form .step-card .info input:focus {
+  border: 1px solid hsl(243, 100%, 62%);
+}
+#Sub-form .step-card .info input:invalid {
+  border: 1px solid hsl(354, 84%, 57%);
 }
 
 #Sub-form .step-card .plans {
@@ -50,6 +58,9 @@ ul {
   border-radius: 0.75rem;
   gap: 1rem;
   border: 1px solid hsl(229, 24%, 87%);
+}
+#Sub-form .step-card .plans .plan-card:hover {
+  border: 1px solid hsl(243, 100%, 62%);
 }
 #Sub-form .step-card .plans .plan-card.active {
   background-color: hsl(217, 100%, 97%);
@@ -140,19 +151,12 @@ ul {
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 input[type=checkbox] {
   cursor: default;
 }
-#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:hover {
-  background-color: #c9cbcd;
-  transition-duration: 0s;
-}
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked::after {
   background-color: #fff;
   left: 23px;
 }
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 :focus:not(.focus-visible) {
   outline: 0;
-}
-#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked:hover {
-  background-color: #535db3;
 }
 
 @media only screen and (min-width: 768px) {
@@ -176,6 +180,9 @@ ul {
   gap: 1rem;
   border: 1px solid hsl(229, 24%, 87%);
   padding: 1rem;
+}
+#Sub-form .step-card .addons .addons-card:hover {
+  border: 1px solid hsl(243, 100%, 62%);
 }
 #Sub-form .step-card .addons .addons-card.active {
   background-color: hsl(217, 100%, 97%);
@@ -257,19 +264,12 @@ ul {
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 input[type=checkbox] {
   cursor: default;
 }
-#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:hover {
-  background-color: #c9cbcd;
-  transition-duration: 0s;
-}
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked::after {
   background-color: #fff;
   left: 23px;
 }
 #Sub-form .step-card .bill-option .checkbox-wrapper-2 :focus:not(.focus-visible) {
   outline: 0;
-}
-#Sub-form .step-card .bill-option .checkbox-wrapper-2 .ikxBAC:checked:hover {
-  background-color: #535db3;
 }
 
 #Sub-form .step-card .summary {
@@ -299,6 +299,9 @@ ul {
   font-size: 1rem;
   color: hsl(231, 11%, 63%);
   cursor: pointer;
+}
+#Sub-form .step-card .summary .summary-plan .plan-info .backToStep1:hover {
+  color: hsl(243, 100%, 62%);
 }
 #Sub-form .step-card .summary .summary-plan .plan-info .plan-title {
   font-size: 1rem;
@@ -363,7 +366,7 @@ ul {
 #Sub-form {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 #Sub-form .registration-steps {
@@ -447,7 +450,7 @@ ul {
   display: block;
   width: fit-content;
   margin: 0;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 0.25rem;
   text-decoration: none;
   font-weight: 400;
@@ -456,9 +459,15 @@ ul {
   justify-self: flex-start;
   color: hsl(231, 11%, 63%);
 }
+#Sub-form .btn-form-nav .start:hover {
+  color: hsl(213, 96%, 18%);
+}
 #Sub-form .btn-form-nav .end, #Sub-form .btn-form-nav .center {
   background-color: hsl(213, 96%, 18%);
   color: hsl(0, 0%, 100%);
+}
+#Sub-form .btn-form-nav .end:hover, #Sub-form .btn-form-nav .center:hover {
+  opacity: 0.75;
 }
 #Sub-form .btn-form-nav .end {
   justify-self: flex-end;
@@ -484,6 +493,7 @@ ul {
     grid-column-gap: 70px;
     grid-row-gap: 0px;
     padding: 1rem;
+    margin: auto;
   }
   #Sub-form .registration-steps {
     flex-direction: column;
@@ -532,8 +542,13 @@ ul {
     grid-area: 2/2/3/3;
   }
 }
-body {
+#App {
   background-color: hsl(217, 100%, 97%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=App.css.map */

@@ -13,6 +13,10 @@
                 gap: 1rem;
                 border: 1px solid $Light-gray;
                 padding: 1rem;
+
+                &:hover {
+                    border: 1px solid $Purplish-blue;
+                }
     
                 &.active {
                     background-color: $Magnolia;

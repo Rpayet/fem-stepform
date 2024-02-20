@@ -17,12 +17,25 @@
                 color: $Marine-blue;
             }
 
+            
             .input {
-                border: 1px solid $Cool-gray;
+                color: $Marine-blue;
+                border: 1px solid $Light-gray;
                 border-radius: .25rem;
                 padding: .75rem;
                 margin-bottom: .5rem;
+                cursor: pointer;
             }
+
+            input:focus {
+                border: 1px solid $Purplish-blue;
+            }
+
+            input:invalid {
+                border: 1px solid $Strawberry-red;
+            }
+
+
         }
     }    
 }

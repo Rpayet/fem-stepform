@@ -29,6 +29,10 @@
                         font-size: 1rem;
                         color: $Cool-gray;
                         cursor: pointer;
+
+                        &:hover {
+                            color: $Purplish-blue;
+                        }
                     }
 
                     .plan-title {

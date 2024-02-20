@@ -13,6 +13,10 @@
                 border-radius: .75rem;
                 gap: 1rem;
                 border: 1px solid $Light-gray;
+
+                &:hover {
+                    border: 1px solid $Purplish-blue;
+                }
     
                 &.active {
                     background-color: $Magnolia;
