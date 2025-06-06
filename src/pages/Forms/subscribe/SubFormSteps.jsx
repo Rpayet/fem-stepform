@@ -222,7 +222,7 @@ export function Step4({formData}) {
                     ? 'Total (per month)'
                     : 'Total (per year)'
                 }</p>
-                <p className='price'>+${total}/{formData.billing === 'monthly' ? 'mo' : 'yr'}</p>
+                <p className='price'>+${total ? total : ''}/{formData.billing === 'monthly' ? 'mo' : 'yr'}</p>
             </div>
         </div>
     )
