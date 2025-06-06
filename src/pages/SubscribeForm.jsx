@@ -60,11 +60,11 @@ export default function SubscribeForm() {
 
             <div className='btn-form-nav'>
                 {(currentStep > 1 && currentStep < 5) 
-                    && <Link className='btn start' onClick={() => {setCurrentStep(currentStep-1)}} to={`/subscribe/step${currentStep-1}`} >Go Back</Link>}
+                    && <Link className='btn start' onClick={() => {setCurrentStep(currentStep-1)}} to={`/fem-stepform/subscribe/step${currentStep-1}`} >Go Back</Link>}
                 {(currentStep < 4) 
-                    && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/step${currentStep + 1}`} >Next Step</Link>}
+                    && <Link className='btn end' onClick={() => {setCurrentStep(currentStep+1)}} to={`/fem-stepform/subscribe/step${currentStep + 1}`} >Next Step</Link>}
                 {currentStep === 4 
-                    && <Link className='btn end confirm' onClick={() => {setCurrentStep(currentStep+1)}} to={`/subscribe/confirm`} >Confirm</Link>}
+                    && <Link className='btn end confirm' onClick={() => {setCurrentStep(currentStep+1)}} to={`/fem-stepform/subscribe/confirm`} >Confirm</Link>}
                 {currentStep === 5 &&
                     <Link className='btn center' to='/'>Home</Link>}
             </div>
