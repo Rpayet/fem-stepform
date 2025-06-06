@@ -66,7 +66,7 @@ export default function SubscribeForm() {
                 {currentStep === 4 
                     && <Link className='btn end confirm' onClick={() => {setCurrentStep(currentStep+1)}} to={`/fem-stepform/subscribe/confirm`} >Confirm</Link>}
                 {currentStep === 5 &&
-                    <Link className='btn center' to='/'>Home</Link>}
+                    <Link className='btn center' to='/fem-stepform'>Home</Link>}
             </div>
         </form>
     );
